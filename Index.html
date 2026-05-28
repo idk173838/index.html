@@ -3,214 +3,1570 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pascal's Law Presentation</title>
+
+<title>Pascal's Law | Complete Scientific Exploration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f8fc;
-    color:#222;
-    line-height:1.7;
+font-family:'Poppins',sans-serif;
+background:#08111f;
+color:white;
+overflow-x:hidden;
+line-height:1.8;
 }
 
-header{
-    background:linear-gradient(135deg,#0077cc,#00b4d8);
-    color:white;
-    text-align:center;
-    padding:80px 20px;
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(10px);
+z-index:999;
 }
 
-header h1{
-    font-size:4rem;
-    margin:0;
+.logo{
+font-size:1.6rem;
+font-weight:700;
+color:#4fc3f7;
 }
 
-header p{
-    font-size:1.3rem;
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#4fc3f7;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+url("https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:1000px;
+}
+
+.hero h1{
+font-size:5rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.4rem;
+max-width:850px;
+margin:auto;
+}
+
+.hero-btn{
+display:inline-block;
+margin-top:35px;
+padding:15px 35px;
+background:#4fc3f7;
+color:#000;
+font-weight:700;
+text-decoration:none;
+border-radius:40px;
+transition:.3s;
+}
+
+.hero-btn:hover{
+transform:translateY(-5px);
 }
 
 section{
-    max-width:1000px;
-    margin:auto;
-    padding:50px 25px;
+padding:100px 10%;
+}
+
+.section-title{
+font-size:3rem;
+margin-bottom:30px;
+color:#4fc3f7;
 }
 
 .card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin:25px 0;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+background:#0f1d34;
+padding:35px;
+border-radius:18px;
+margin:30px 0;
+box-shadow:0 0 20px rgba(0,0,0,.4);
 }
 
-h2{
-    color:#0077cc;
+.card h3{
+margin-bottom:15px;
+color:#4fc3f7;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.image-banner{
+width:100%;
+border-radius:20px;
+margin-top:25px;
+margin-bottom:25px;
+}
+
+.quote{
+font-size:1.3rem;
+padding:30px;
+border-left:6px solid #4fc3f7;
+background:#11233f;
+margin:30px 0;
 }
 
 .formula{
-    background:#eef7ff;
-    padding:20px;
-    border-left:6px solid #0077cc;
-    font-size:1.4rem;
-    font-weight:bold;
-    margin:20px 0;
+background:#132949;
+padding:25px;
+border-radius:15px;
+font-size:1.6rem;
+margin:25px 0;
+font-weight:bold;
+text-align:center;
 }
 
 .highlight{
-    background:#d9f2ff;
-    padding:15px;
-    border-radius:10px;
+color:#4fc3f7;
+font-weight:bold;
+}
+
+.timeline{
+border-left:4px solid #4fc3f7;
+padding-left:30px;
+}
+
+.timeline div{
+margin-bottom:30px;
+}
+
+iframe{
+width:100%;
+height:500px;
+border:none;
+border-radius:20px;
+margin-top:25px;
 }
 
 footer{
-    background:#0077cc;
-    color:white;
-    text-align:center;
-    padding:30px;
-    margin-top:40px;
+background:#000;
+padding:60px;
+text-align:center;
 }
+
+footer h2{
+color:#4fc3f7;
+margin-bottom:20px;
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Pascal's Law</h1>
-    <p>The Science of Pressure in Fluids</p>
-</header>
+<nav>
 
-<section>
+<div class="logo">
+Pascal's Law
+</div>
+
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#pascal">Blaise Pascal</a></li>
+<li><a href="#pressure">Pressure</a></li>
+<li><a href="#law">Pascal's Law</a></li>
+<li><a href="#hydraulics">Hydraulics</a></li>
+<li><a href="#videos">Videos</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>PASCAL'S LAW</h1>
+
+<p>
+A complete scientific exploration of pressure,
+fluid mechanics, hydraulic systems,
+engineering applications, historical development,
+mathematical foundations, and modern technology.
+</p>
+
+<a href="#intro" class="hero-btn">
+Begin Exploration
+</a>
+
+</div>
+
+</section>
+
+<section id="intro">
+
+<h2 class="section-title">
+Introduction
+</h2>
 
 <div class="card">
-    <h2>Introduction</h2>
-    <p>
-        Pascal's Law is one of the most important principles in fluid mechanics.
-        It explains how pressure applied to a confined liquid is transmitted
-        equally throughout the entire fluid. This discovery by French scientist
-        Blaise Pascal forms the basis of hydraulic systems used around the world.
-    </p>
+
+<p>
+
+Pascal's Law is one of the most important ideas
+in all of fluid mechanics.
+
+It explains how pressure behaves inside
+a confined fluid and provides the scientific
+foundation for hydraulic machines used across
+modern civilization.
+
+Without Pascal's Law,
+many technologies we rely on every day
+would not exist.
+
+Hydraulic brakes,
+vehicle lifts,
+construction machinery,
+aircraft control systems,
+industrial presses,
+and countless other devices
+all depend upon the ability of fluids
+to transmit pressure efficiently.
+
+</p>
+
+<img class="image-banner"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Hydraulic_press.svg/1280px-Hydraulic_press.svg.png">
+
+</div>
+
+<div class="quote">
+
+"Pressure applied to a confined fluid is transmitted
+equally throughout the fluid."
+
+</div>
+
+</section>
+
+<section id="pascal">
+
+<h2 class="section-title">
+Who Was Blaise Pascal?
+</h2>
+
+<div class="card">
+
+<p>
+
+Blaise Pascal was born in 1623 in Clermont-Ferrand,
+France.
+
+Although he lived only 39 years,
+his contributions transformed mathematics,
+physics, engineering,
+probability theory,
+and philosophy.
+
+Pascal demonstrated remarkable intellectual ability
+from an early age and produced scientific work
+that still influences modern science today.
+
+</p>
+
+<div class="timeline">
+
+<div>
+<h3>1623</h3>
+<p>Birth of Blaise Pascal.</p>
+</div>
+
+<div>
+<h3>1642</h3>
+<p>Invented one of the first mechanical calculators.</p>
+</div>
+
+<div>
+<h3>1648</h3>
+<p>Conducted experiments proving atmospheric pressure exists.</p>
+</div>
+
+<div>
+<h3>1654</h3>
+<p>Developed foundational ideas in probability theory.</p>
+</div>
+
+<div>
+<h3>1662</h3>
+<p>Death of Blaise Pascal.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+    <section id="pressure">
+
+<h2 class="section-title">
+Understanding Pressure
+</h2>
+
+<div class="card">
+
+<p>
+
+Before understanding Pascal's Law,
+we must first understand pressure itself.
+
+Pressure is defined as the amount of force
+distributed over a given area.
+
+The same force can create very different pressures
+depending on how concentrated that force is.
+
+For example,
+a person standing on snow wearing regular shoes
+may sink deeply into the snow because their weight
+is concentrated on a relatively small surface area.
+
+However,
+the same person wearing snowshoes distributes
+their weight across a much larger area,
+creating less pressure and preventing sinking.
+
+</p>
+
+<div class="formula">
+P = F / A
+</div>
+
+<p>
+
+Where:
+
+<br><br>
+
+P = Pressure
+
+<br>
+
+F = Force
+
+<br>
+
+A = Area
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>High Pressure</h3>
+
+<p>
+
+A needle produces enormous pressure because
+its force acts over an extremely tiny area.
+
+This allows it to pierce materials
+with relatively little force.
+
+</p>
+
 </div>
 
 <div class="card">
-    <h2>What Is Pascal's Law?</h2>
 
-    <div class="formula">
-        Pressure applied to a confined fluid is transmitted equally in all directions.
-    </div>
+<h3>Low Pressure</h3>
 
-    <p>
-        When a force is applied to a liquid inside a closed container,
-        every part of that liquid experiences the same increase in pressure.
-        Because liquids are nearly incompressible, they transfer pressure
-        extremely efficiently.
-    </p>
+<p>
+
+A wide platform spreads force over a larger area.
+
+The same force therefore produces less pressure.
+
+</p>
+
 </div>
 
 <div class="card">
-    <h2>Understanding Pressure</h2>
 
-    <div class="formula">
-        P = F / A
-    </div>
+<h3>Engineering Importance</h3>
 
-    <p>
-        Pressure is calculated by dividing force by area.
-        The greater the force applied over a given area,
-        the greater the pressure produced.
-    </p>
+<p>
 
-    <ul>
-        <li>P = Pressure</li>
-        <li>F = Force</li>
-        <li>A = Area</li>
-    </ul>
+Engineers carefully control pressure
+when designing machinery,
+vehicles,
+aircraft,
+bridges,
+and industrial equipment.
+
+</p>
+
+</div>
+
+</div>
+
+<img class="image-banner"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Pressure_illustration.svg/1280px-Pressure_illustration.svg.png">
+
+</section>
+
+<section id="law">
+
+<h2 class="section-title">
+Pascal's Law in Detail
+</h2>
+
+<div class="card">
+
+<p>
+
+Pascal's Law states that
+when pressure is applied to a confined fluid,
+the increase in pressure is transmitted equally
+throughout every part of the fluid.
+
+This means pressure does not remain localized.
+
+Instead,
+it spreads instantly and uniformly
+throughout the enclosed liquid.
+
+The law works because liquids are nearly incompressible.
+
+Unlike gases,
+liquids cannot easily be squeezed into smaller volumes.
+
+As a result,
+any pressure applied to one location
+must be distributed throughout the fluid.
+
+</p>
+
 </div>
 
 <div class="card">
-    <h2>Hydraulic Systems</h2>
 
-    <div class="formula">
-        F₁ / A₁ = F₂ / A₂
-    </div>
+<h3>Imagine a Sealed Container</h3>
 
-    <p>
-        Hydraulic systems use Pascal's Law to multiply force.
-        A small force applied to a small piston can create
-        a much larger force at a larger piston.
-    </p>
+<p>
 
-    <div class="highlight">
-        This is why hydraulic lifts can raise heavy vehicles
-        with relatively little effort.
-    </div>
+Imagine a completely sealed container
+filled with water.
+
+If you push on one side of the container,
+every molecule of water pushes on neighboring molecules.
+
+This chain reaction spreads throughout the fluid.
+
+Eventually,
+every location experiences the same pressure increase.
+
+This phenomenon is the foundation
+of hydraulic engineering.
+
+</p>
+
+</div>
+
+<div class="formula">
+
+Pressure Applied Here
+
+↓
+
+Fluid Transfers Pressure
+
+↓
+
+Pressure Appears Everywhere
+
 </div>
 
 <div class="card">
-    <h2>Real-World Applications</h2>
 
-    <ul>
-        <li>Hydraulic car lifts</li>
-        <li>Vehicle braking systems</li>
-        <li>Construction machinery</li>
-        <li>Aircraft control systems</li>
-        <li>Industrial hydraulic presses</li>
-    </ul>
+<h3>Why This Matters</h3>
+
+<p>
+
+The ability of fluids to transmit pressure
+allows engineers to move huge loads
+using surprisingly small forces.
+
+Without Pascal's Law,
+modern hydraulic systems would be impossible.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="hydraulics">
+
+<h2 class="section-title">
+Hydraulic Systems
+</h2>
+
+<div class="card">
+
+<p>
+
+Hydraulic systems are devices that use fluid pressure
+to transfer energy and multiply force.
+
+These systems generally contain:
+
+</p>
+
+<ul>
+
+<li>Input piston</li>
+
+<li>Hydraulic fluid</li>
+
+<li>Output piston</li>
+
+<li>Sealed hydraulic lines</li>
+
+</ul>
+
+</div>
+
+<div class="formula">
+
+F₁ / A₁ = F₂ / A₂
+
 </div>
 
 <div class="card">
-    <h2>Example Calculation</h2>
 
-    <p>
-        Suppose a force of 100 N is applied to a piston with an area of 2 cm².
-        The pressure produced is transmitted through the fluid to a second piston
-        with an area of 20 cm².
-    </p>
+<p>
 
-    <p>
-        Because the second piston is ten times larger,
-        the output force becomes 1000 N.
-    </p>
+This equation shows how hydraulic systems
+multiply force.
 
-    <div class="highlight">
-        A small input force can generate a much larger output force.
-    </div>
+A small force applied to a small piston
+can generate a much larger force
+on a larger piston.
+
+The pressure remains the same,
+but the larger area creates more force.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Step 1</h3>
+
+<p>
+
+A force is applied
+to the small piston.
+
+</p>
+
 </div>
 
 <div class="card">
-    <h2>Advantages</h2>
 
-    <ul>
-        <li>Efficient transfer of force</li>
-        <li>Allows heavy lifting</li>
-        <li>Reliable mechanical operation</li>
-        <li>Widely used in engineering</li>
-        <li>Improves safety and performance</li>
-    </ul>
+<h3>Step 2</h3>
+
+<p>
+
+Pressure develops inside
+the hydraulic fluid.
+
+</p>
+
 </div>
 
 <div class="card">
-    <h2>Conclusion</h2>
 
-    <p>
-        Pascal's Law demonstrates how pressure behaves in confined fluids.
-        By transmitting pressure equally throughout a liquid,
-        hydraulic systems can multiply force and perform tasks that would
-        otherwise require enormous physical effort.
-    </p>
+<h3>Step 3</h3>
 
-    <p>
-        From car brakes to industrial machinery, Pascal's discovery continues
-        to play a vital role in modern engineering and technology.
-    </p>
+<p>
+
+Pressure spreads equally
+throughout the system.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Step 4</h3>
+
+<p>
+
+The larger piston experiences
+the same pressure.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Step 5</h3>
+
+<p>
+
+Because the piston area is larger,
+the resulting force is much greater.
+
+</p>
+
+</div>
+
+</div>
+
+<img class="image-banner"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Hydraulic_press.svg/1280px-Hydraulic_press.svg.png">
+
+</section><section id="applications">
+
+<h2 class="section-title">
+Real-World Applications of Pascal's Law
+</h2>
+
+<div class="card">
+
+<p>
+
+Pascal's Law is not merely a theoretical idea.
+
+It powers some of the most important technologies
+used throughout the modern world.
+
+From automobiles and airplanes
+to factories and construction sites,
+hydraulic systems allow humans
+to perform tasks that would otherwise
+require enormous amounts of physical force.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Hydraulic Car Lifts</h3>
+
+<p>
+
+Auto repair shops use hydraulic lifts
+to raise vehicles weighing thousands of pounds.
+
+A mechanic can apply a relatively small force,
+and Pascal's Law allows the hydraulic system
+to amplify that force enough
+to lift an entire vehicle.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Hydraulic Brakes</h3>
+
+<p>
+
+Every time a driver presses the brake pedal,
+Pascal's Law is at work.
+
+Pressure applied to the brake fluid
+travels through sealed brake lines
+and activates braking mechanisms
+at all four wheels simultaneously.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Construction Equipment</h3>
+
+<p>
+
+Excavators,
+bulldozers,
+cranes,
+and loaders
+depend on hydraulic cylinders.
+
+These systems generate tremendous forces
+while maintaining precise control.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Aircraft Systems</h3>
+
+<p>
+
+Modern aircraft rely heavily on hydraulics.
+
+Landing gear,
+flight controls,
+and braking systems
+often use hydraulic pressure
+to operate safely and reliably.
+
+</p>
+
+</div>
+
+</div>
+
+<img class="image-banner"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Excavator_hydraulics.jpg/1280px-Excavator_hydraulics.jpg">
+
+</section>
+
+<section id="calculation">
+
+<h2 class="section-title">
+Worked Example
+</h2>
+
+<div class="card">
+
+<h3>Hydraulic Lift Calculation</h3>
+
+<p>
+
+Suppose a mechanic applies
+a force of 100 Newtons
+to a piston with an area of 2 cm².
+
+The output piston
+has an area of 20 cm².
+
+Using Pascal's Law:
+
+</p>
+
+<div class="formula">
+
+100 / 2 = F₂ / 20
+
+</div>
+
+<p>
+
+Multiplying both sides by 20 gives:
+
+</p>
+
+<div class="formula">
+
+F₂ = 1000 N
+
+</div>
+
+<p>
+
+The hydraulic system multiplies
+the original force by a factor of ten.
+
+This is why hydraulic machinery
+can lift heavy objects so efficiently.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="advanced">
+
+<h2 class="section-title">
+Advanced Engineering Concepts
+</h2>
+
+<div class="card">
+
+<p>
+
+Hydraulic systems do not create energy.
+
+This is one of the most misunderstood ideas
+about Pascal's Law.
+
+Although force increases,
+the distance moved by the larger piston decreases.
+
+This relationship follows
+the law of conservation of energy.
+
+Engineers must carefully balance:
+
+</p>
+
+<ul>
+
+<li>Force</li>
+
+<li>Distance</li>
+
+<li>Pressure</li>
+
+<li>Fluid volume</li>
+
+<li>Mechanical efficiency</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Hydraulic Fluid Requirements</h3>
+
+<p>
+
+Hydraulic fluids must possess
+very specific properties.
+
+These include:
+
+</p>
+
+<ul>
+
+<li>Low compressibility</li>
+
+<li>Thermal stability</li>
+
+<li>Lubricating ability</li>
+
+<li>Corrosion resistance</li>
+
+<li>Long service life</li>
+
+</ul>
+
+<p>
+
+Without these characteristics,
+hydraulic systems would lose efficiency
+and become unreliable.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Industrial Hydraulic Presses</h3>
+
+<p>
+
+Industrial presses use Pascal's Law
+to generate forces reaching millions of Newtons.
+
+These machines are capable of:
+
+</p>
+
+<ul>
+
+<li>Forming metal components</li>
+
+<li>Compressing materials</li>
+
+<li>Manufacturing automobile parts</li>
+
+<li>Producing aerospace structures</li>
+
+<li>Recycling large metal objects</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="videos">
+
+<h2 class="section-title">
+Educational Videos
+</h2>
+
+<div class="card">
+
+<h3>Hydraulic Systems Explained</h3>
+
+<iframe
+src="https://www.youtube.com/embed/7xNnRBksvOU"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="card">
+
+<h3>Pascal's Law Demonstration</h3>
+
+<iframe
+src="https://www.youtube.com/embed/t1xjvK0d6IY"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section><section id="fluid-mechanics">
+
+<h2 class="section-title">
+The Science of Fluid Mechanics
+</h2>
+
+<div class="card">
+
+<p>
+
+Fluid mechanics is the branch of physics
+that studies the behavior of liquids and gases.
+
+Pascal's Law belongs to this field and helps explain
+how forces move through fluids.
+
+Scientists use fluid mechanics to design:
+
+</p>
+
+<ul>
+
+<li>Aircraft</li>
+
+<li>Ships</li>
+
+<li>Submarines</li>
+
+<li>Hydraulic machinery</li>
+
+<li>Medical equipment</li>
+
+<li>Water systems</li>
+
+<li>Industrial manufacturing systems</li>
+
+</ul>
+
+<p>
+
+Without fluid mechanics,
+many modern technologies would not exist.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="atmospheric-pressure">
+
+<h2 class="section-title">
+Atmospheric Pressure
+</h2>
+
+<div class="card">
+
+<p>
+
+One of Blaise Pascal's most important discoveries
+involved atmospheric pressure.
+
+For many centuries,
+people believed air had no weight.
+
+Pascal demonstrated that Earth's atmosphere
+actually exerts pressure on everything around us.
+
+At sea level,
+atmospheric pressure is approximately:
+
+</p>
+
+<div class="formula">
+
+101,325 Pascals (Pa)
+
+</div>
+
+<p>
+
+This means every square meter of surface area
+experiences over one hundred thousand Newtons
+of force from the atmosphere.
+
+Fortunately,
+our bodies are adapted to balance this pressure.
+
+</p>
+
+</div>
+
+<img class="image-banner"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Atmospheric_pressure.svg/1280px-Atmospheric_pressure.svg.png">
+
+</section>
+
+<section id="experiments">
+
+<h2 class="section-title">
+Historic Experiments
+</h2>
+
+<div class="card">
+
+<h3>The Puy de Dôme Experiment</h3>
+
+<p>
+
+Pascal hypothesized that atmospheric pressure
+would decrease with altitude.
+
+To test this,
+he arranged an experiment
+on the mountain known as Puy de Dôme.
+
+Scientists measured mercury levels
+at different elevations.
+
+The results confirmed his prediction:
+
+the higher the elevation,
+the lower the atmospheric pressure.
+
+This experiment helped establish
+modern atmospheric science.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="medical">
+
+<h2 class="section-title">
+Medical Applications
+</h2>
+
+<div class="card">
+
+<p>
+
+Pascal's Law is used extensively in medicine.
+
+Hydraulic principles appear in:
+
+</p>
+
+<ul>
+
+<li>Hospital beds</li>
+
+<li>Dental chairs</li>
+
+<li>Medical lifts</li>
+
+<li>Surgical equipment</li>
+
+<li>Hydraulic rehabilitation devices</li>
+
+</ul>
+
+<p>
+
+Doctors and engineers use hydraulic systems
+because they provide smooth,
+controlled movement.
+
+Precision is essential in healthcare,
+and hydraulic systems help achieve that precision.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="comparison">
+
+<h2 class="section-title">
+Pascal Compared to Other Scientists
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Isaac Newton</h3>
+
+<p>
+
+Developed the laws of motion
+and classical mechanics.
+
+Newton explained how forces affect motion.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Archimedes</h3>
+
+<p>
+
+Studied buoyancy and fluid displacement.
+
+His discoveries remain essential
+to fluid mechanics today.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Blaise Pascal</h3>
+
+<p>
+
+Explained how pressure behaves
+inside confined fluids.
+
+His work created the foundation
+for hydraulic engineering.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="interesting-facts">
+
+<h2 class="section-title">
+Interesting Facts
+</h2>
+
+<div class="card">
+
+<ul>
+
+<li>
+The SI unit of pressure is named the Pascal (Pa)
+in honor of Blaise Pascal.
+</li>
+
+<li>
+Pascal built one of the world's first
+mechanical calculators.
+</li>
+
+<li>
+Modern airplanes use hydraulic systems
+based on Pascal's Law.
+</li>
+
+<li>
+Large hydraulic presses can generate
+millions of Newtons of force.
+</li>
+
+<li>
+Many amusement park rides rely on hydraulic systems.
+</li>
+
+<li>
+Hydraulic technology is used in space-related engineering.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="engineering">
+
+<h2 class="section-title">
+Engineering Impact
+</h2>
+
+<div class="card">
+
+<p>
+
+Pascal's Law transformed engineering.
+
+Today,
+hydraulic systems make it possible
+to lift skyscraper components,
+manufacture automobiles,
+operate aircraft,
+and perform countless industrial tasks.
+
+The principle is simple,
+but its impact is enormous.
+
+Many experts consider Pascal's Law
+one of the most influential scientific discoveries
+in the history of engineering.
+
+</p>
+
+</div>
+
+</section><section id="quiz">
+
+<h2 class="section-title">
+Knowledge Check
+</h2>
+
+<div class="card">
+
+<h3>Test Your Understanding</h3>
+
+<p><strong>1.</strong> What does Pascal's Law state?</p>
+
+<p>
+Pressure applied to a confined fluid
+is transmitted equally throughout the fluid.
+</p>
+
+<br>
+
+<p><strong>2.</strong> What equation is used to calculate pressure?</p>
+
+<div class="formula">
+P = F / A
+</div>
+
+<br>
+
+<p><strong>3.</strong> Name three technologies that use Pascal's Law.</p>
+
+<ul>
+<li>Hydraulic lifts</li>
+<li>Vehicle braking systems</li>
+<li>Construction machinery</li>
+</ul>
+
+<br>
+
+<p><strong>4.</strong> Why are liquids effective in hydraulic systems?</p>
+
+<p>
+Because liquids are nearly incompressible
+and transfer pressure efficiently.
+</p>
+
+</div>
+
+</section>
+
+<section id="glossary">
+
+<h2 class="section-title">
+Glossary of Terms
+</h2>
+
+<div class="card">
+
+<h3>Pressure</h3>
+<p>
+The amount of force applied over a specific area.
+</p>
+
+<h3>Force</h3>
+<p>
+A push or pull acting on an object.
+</p>
+
+<h3>Fluid</h3>
+<p>
+A substance that can flow, including liquids and gases.
+</p>
+
+<h3>Hydraulic System</h3>
+<p>
+A machine that uses fluid pressure
+to transfer energy and multiply force.
+</p>
+
+<h3>Pascal (Pa)</h3>
+<p>
+The SI unit used to measure pressure.
+</p>
+
+</div>
+
+</section>
+
+<section id="future">
+
+<h2 class="section-title">
+Future Applications
+</h2>
+
+<div class="card">
+
+<p>
+
+As technology advances,
+Pascal's Law continues to influence
+new innovations.
+
+Engineers are developing:
+
+</p>
+
+<ul>
+
+<li>Advanced robotic systems</li>
+
+<li>More efficient aircraft hydraulics</li>
+
+<li>Precision manufacturing equipment</li>
+
+<li>Medical robotics</li>
+
+<li>Space exploration technologies</li>
+
+<li>Smart industrial automation systems</li>
+
+</ul>
+
+<p>
+
+Even centuries after Pascal's discovery,
+his work remains deeply connected
+to modern technological progress.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="references">
+
+<h2 class="section-title">
+References & Further Learning
+</h2>
+
+<div class="card">
+
+<p>
+
+For additional study,
+explore the following resources:
+
+</p>
+
+<ul>
+
+<li>
+Wikipedia – Pascal's Law
+</li>
+
+<li>
+Encyclopaedia Britannica – Fluid Mechanics
+</li>
+
+<li>
+NASA Engineering Resources
+</li>
+
+<li>
+National Geographic Science Resources
+</li>
+
+<li>
+Khan Academy Physics
+</li>
+
+<li>
+MIT OpenCourseWare
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="conclusion">
+
+<h2 class="section-title">
+Conclusion
+</h2>
+
+<div class="card">
+
+<p>
+
+Pascal's Law is one of the most influential
+principles in the history of science
+and engineering.
+
+What began as an investigation into pressure
+became the foundation for hydraulic technology
+used throughout the world.
+
+Today,
+hydraulic systems help humans
+build cities,
+operate aircraft,
+manufacture products,
+perform medical procedures,
+and accomplish tasks that would otherwise
+require extraordinary amounts of force.
+
+The genius of Pascal's discovery lies
+in its simplicity:
+
+a change in pressure applied to a confined fluid
+is transmitted equally throughout the fluid.
+
+This elegant principle continues
+to power modern civilization.
+
+</p>
+
 </div>
 
 </section>
 
 <footer>
-    <h3>Pascal's Law Presentation</h3>
-    <p>Created by: Natan i kuba </p>
+
+<h2>
+Pascal's Law
+</h2>
+
+<p>
+
+A Complete Scientific Exploration
+
+</p>
+
+<br>
+
+<p>
+
+Created By: Natan i Kuba
+
+</p>
+
+<br>
+
+<p>
+
+Built with HTML & CSS for GitHub Pages
+
+</p>
+
 </footer>
+
+<script>
+
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{
+opacity:0,
+transform:'translateY(40px)'
+},
+
+{
+opacity:1,
+transform:'translateY(0px)'
+}
+
+],{
+
+duration:800,
+fill:'forwards'
+
+});
+
+}
+
+});
+
+});
+
+cards.forEach(card => observer.observe(card));
+
+</script>
 
 </body>
 </html>
