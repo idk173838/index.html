@@ -1,199 +1,400 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pascal's Law | Complete Scientific Exploration</title>
+<title>Prawo Pascala | Kompleksowe Opracowanie Naukowe</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Zaawansowane opracowanie naukowe dotyczące Prawa Pascala, ciśnienia, hydrostatyki, hydrauliki, inżynierii, oceanografii oraz współczesnych zastosowań mechaniki płynów.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   PRAWO PASCALA
+   MASTER EDITION
+   ===================================================== */
+
+:root{
+
+--bg:#050d18;
+--bg2:#0a1728;
+--card:rgba(255,255,255,0.05);
+
+--text:#f8fbff;
+--text2:#c7d5e5;
+--text3:#8fa3bb;
+
+--accent:#4fb6ff;
+--accent2:#7ad0ff;
+
+--border:rgba(255,255,255,0.08);
+
+--radius:28px;
+
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#08111f;
-color:white;
+
+font-family:'Inter',sans-serif;
+
+background:
+
+radial-gradient(
+circle at top right,
+rgba(79,182,255,0.15),
+transparent 30%
+),
+
+radial-gradient(
+circle at top left,
+rgba(79,182,255,0.08),
+transparent 25%
+),
+
+var(--bg);
+
+color:var(--text);
+
 overflow-x:hidden;
-line-height:1.8;
+
+line-height:1.9;
 }
 
-nav{
+body::before{
+
+content:"";
+
 position:fixed;
+
+inset:0;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,0.015) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,0.015) 1px,
+transparent 1px
+);
+
+background-size:60px 60px;
+
+pointer-events:none;
+
+z-index:-1;
+}
+
+.container{
+
+width:min(1400px,92%);
+margin:auto;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav{
+
+position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
-padding:20px 50px;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
-background:rgba(0,0,0,.65);
-backdrop-filter:blur(10px);
-z-index:999;
+
+padding:22px 60px;
+
+background:rgba(5,13,24,0.78);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid var(--border);
+
+z-index:9999;
 }
 
 .logo{
-font-size:1.6rem;
-font-weight:700;
-color:#4fc3f7;
+
+font-size:1.1rem;
+
+font-weight:900;
+
+letter-spacing:2px;
 }
 
 nav ul{
+
 display:flex;
-gap:25px;
+
 list-style:none;
+
+gap:28px;
 }
 
 nav a{
-color:white;
+
 text-decoration:none;
+
+color:var(--text2);
+
 transition:.3s;
 }
 
 nav a:hover{
-color:#4fc3f7;
+
+color:white;
 }
 
+/* ==========================
+   HERO
+========================== */
+
 .hero{
-height:100vh;
+
+min-height:100vh;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 text-align:center;
-padding:30px;
+
+padding:120px 20px;
+
+position:relative;
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:900px;
+height:900px;
+
+border-radius:50%;
+
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
-url("https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;
-background-position:center;
+
+radial-gradient(
+circle,
+rgba(79,182,255,0.15),
+transparent 70%
+);
+
+filter:blur(30px);
+
+top:-300px;
+right:-200px;
 }
 
 .hero-content{
-max-width:1000px;
+
+max-width:1100px;
+
+position:relative;
+
+z-index:2;
 }
 
 .hero h1{
-font-size:5rem;
-margin-bottom:20px;
+
+font-size:clamp(4rem,10vw,8rem);
+
+font-weight:900;
+
+line-height:1;
+
+letter-spacing:-4px;
+
+background:
+
+linear-gradient(
+135deg,
+#ffffff,
+#ccecff,
+#72cbff
+);
+
+-webkit-background-clip:text;
+background-clip:text;
+
+color:transparent;
+
+margin-bottom:30px;
+}
+
+.hero h2{
+
+font-size:clamp(
+1.4rem,
+3vw,
+2.4rem
+);
+
+font-weight:600;
+
+color:var(--accent2);
+
+margin-bottom:40px;
 }
 
 .hero p{
-font-size:1.4rem;
-max-width:850px;
+
+font-size:1.15rem;
+
+color:var(--text2);
+
+max-width:900px;
+
 margin:auto;
+
+margin-bottom:50px;
 }
 
-.hero-btn{
+.button{
+
 display:inline-block;
-margin-top:35px;
-padding:15px 35px;
-background:#4fc3f7;
-color:#000;
-font-weight:700;
+
+padding:18px 42px;
+
+border-radius:999px;
+
 text-decoration:none;
-border-radius:40px;
-transition:.3s;
+
+font-weight:700;
+
+color:white;
+
+background:
+
+linear-gradient(
+135deg,
+var(--accent),
+#1476d6
+);
+
+transition:.4s;
 }
 
-.hero-btn:hover{
-transform:translateY(-5px);
+.button:hover{
+
+transform:
+translateY(-5px)
+scale(1.03);
 }
+
+/* ==========================
+   SEKCJE
+========================== */
 
 section{
-padding:100px 10%;
+
+padding:140px 0;
+
+position:relative;
 }
 
-.section-title{
-font-size:3rem;
-margin-bottom:30px;
-color:#4fc3f7;
+section h2{
+
+font-size:clamp(
+2.4rem,
+5vw,
+4.5rem
+);
+
+font-weight:900;
+
+margin-bottom:35px;
 }
+
+section h3{
+
+font-size:1.7rem;
+
+margin-bottom:18px;
+}
+
+section p{
+
+color:var(--text2);
+
+margin-bottom:24px;
+}
+
+.alt{
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,255,255,0.02),
+rgba(255,255,255,0.01)
+);
+}
+
+/* ==========================
+   KARTY
+========================== */
 
 .card{
-background:#0f1d34;
-padding:35px;
-border-radius:18px;
-margin:30px 0;
-box-shadow:0 0 20px rgba(0,0,0,.4);
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:var(--radius);
+
+padding:40px;
+
+backdrop-filter:blur(15px);
+
+margin-top:35px;
+
+transition:.4s;
 }
 
-.card h3{
-margin-bottom:15px;
-color:#4fc3f7;
-}
+.card:hover{
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
+transform:translateY(-8px);
 
-.image-banner{
-width:100%;
-border-radius:20px;
-margin-top:25px;
-margin-bottom:25px;
-}
-
-.quote{
-font-size:1.3rem;
-padding:30px;
-border-left:6px solid #4fc3f7;
-background:#11233f;
-margin:30px 0;
-}
-
-.formula{
-background:#132949;
-padding:25px;
-border-radius:15px;
-font-size:1.6rem;
-margin:25px 0;
-font-weight:bold;
-text-align:center;
-}
-
-.highlight{
-color:#4fc3f7;
-font-weight:bold;
-}
-
-.timeline{
-border-left:4px solid #4fc3f7;
-padding-left:30px;
-}
-
-.timeline div{
-margin-bottom:30px;
-}
-
-iframe{
-width:100%;
-height:500px;
-border:none;
-border-radius:20px;
-margin-top:25px;
-}
-
-footer{
-background:#000;
-padding:60px;
-text-align:center;
-}
-
-footer h2{
-color:#4fc3f7;
-margin-bottom:20px;
+border-color:
+rgba(79,182,255,0.25);
 }
 
 </style>
+
 </head>
 
 <body>
@@ -201,368 +402,212 @@ margin-bottom:20px;
 <nav>
 
 <div class="logo">
-Pascal's Law
+PRAWO PASCALA
 </div>
 
 <ul>
-<li><a href="#intro">Introduction</a></li>
-<li><a href="#pascal">Blaise Pascal</a></li>
-<li><a href="#pressure">Pressure</a></li>
-<li><a href="#law">Pascal's Law</a></li>
-<li><a href="#hydraulics">Hydraulics</a></li>
-<li><a href="#videos">Videos</a></li>
+
+<li><a href="#wstep">Wstęp</a></li>
+
+<li><a href="#historia">Historia</a></li>
+
+<li><a href="#teoria">Teoria</a></li>
+
+<li><a href="#matematyka">Matematyka</a></li>
+
+<li><a href="#hydraulika">Hydraulika</a></li>
+
+<li><a href="#oceany">Oceany</a></li>
+
 </ul>
 
 </nav>
 
-<section class="hero">
+<header class="hero">
 
 <div class="hero-content">
 
-<h1>PASCAL'S LAW</h1>
+<h1>
+PRAWO PASCALA
+</h1>
+
+<h2>
+Kompleksowe opracowanie naukowe dotyczące
+ciśnienia, mechaniki płynów, hydrostatyki,
+hydrauliki oraz współczesnych zastosowań
+jednego z najważniejszych praw fizyki.
+</h2>
 
 <p>
-A complete scientific exploration of pressure,
-fluid mechanics, hydraulic systems,
-engineering applications, historical development,
-mathematical foundations, and modern technology.
+
+Prawo Pascala należy do fundamentów
+współczesnej mechaniki płynów i stanowi
+podstawę działania niezliczonych urządzeń
+wykorzystywanych w przemyśle, medycynie,
+lotnictwie, budownictwie i badaniach oceanicznych.
+
 </p>
 
-<a href="#intro" class="hero-btn">
-Begin Exploration
+<a href="#wstep" class="button">
+Rozpocznij Opracowanie
 </a>
 
 </div>
 
-</section>
+</header>
 
-<section id="intro">
+<section id="wstep">
 
-<h2 class="section-title">
-Introduction
+<div class="container">
+
+<h2>
+Wprowadzenie
 </h2>
 
-<div class="card">
-
 <p>
 
-Pascal's Law is one of the most important ideas
-in all of fluid mechanics.
-
-It explains how pressure behaves inside
-a confined fluid and provides the scientific
-foundation for hydraulic machines used across
-modern civilization.
-
-Without Pascal's Law,
-many technologies we rely on every day
-would not exist.
-
-Hydraulic brakes,
-vehicle lifts,
-construction machinery,
-aircraft control systems,
-industrial presses,
-and countless other devices
-all depend upon the ability of fluids
-to transmit pressure efficiently.
+W historii nauki istnieją odkrycia,
+które nie tylko wyjaśniają określone
+zjawisko przyrodnicze, lecz również
+całkowicie zmieniają kierunek rozwoju
+technologicznego cywilizacji.
 
 </p>
 
-<img class="image-banner"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Hydraulic_press.svg/1280px-Hydraulic_press.svg.png">
+<p>
+
+Prawo Pascala należy do tej wyjątkowej grupy.
+Stanowi ono jedno z fundamentalnych praw
+mechaniki płynów i opisuje sposób,
+w jaki zmiany ciśnienia rozchodzą się
+w cieczach i gazach znajdujących się
+w zamkniętych układach.
+
+</p>
+
+<p>
+
+Choć sama zasada wydaje się niezwykle prosta,
+jej konsekwencje należą do najbardziej
+rewolucyjnych w historii techniki.
+Bez Prawa Pascala nie mogłyby istnieć
+nowoczesne układy hydrauliczne,
+hamulce samochodowe,
+prasy przemysłowe,
+podnośniki hydrauliczne,
+liczne urządzenia medyczne
+oraz znacząca część współczesnej infrastruktury przemysłowej.
+
+</p>
+
+<div class="card">
+
+<h3>
+Znaczenie Prawa Pascala
+</h3>
+
+<p>
+
+Prawo Pascala umożliwia efektywne
+przekazywanie siły przy wykorzystaniu cieczy.
+To właśnie dzięki tej zasadzie
+niewielka siła przyłożona do małego tłoka
+może zostać przekształcona
+w ogromną siłę działającą
+na tłok o większej powierzchni.
+
+</p>
 
 </div>
 
-<div class="quote">
-
-"Pressure applied to a confined fluid is transmitted
-equally throughout the fluid."
-
 </div>
 
-</section>
+</section><section id="historia" class="alt">
 
-<section id="pascal">
+<div class="container">
 
-<h2 class="section-title">
-Who Was Blaise Pascal?
+<h2>
+Historia Odkrycia i Sylwetka Blaise'a Pascala
 </h2>
 
-<div class="card">
-
 <p>
 
-Blaise Pascal was born in 1623 in Clermont-Ferrand,
-France.
-
-Although he lived only 39 years,
-his contributions transformed mathematics,
-physics, engineering,
-probability theory,
-and philosophy.
-
-Pascal demonstrated remarkable intellectual ability
-from an early age and produced scientific work
-that still influences modern science today.
+Prawo Pascala zostało sformułowane przez
+francuskiego matematyka, fizyka, filozofa,
+wynalazcę i teologa Blaise'a Pascala,
+jednego z najwybitniejszych umysłów XVII wieku.
+Jego działalność naukowa przypadła na okres
+intensywnego rozwoju nowoczesnej nauki,
+kiedy Europa stopniowo odchodziła od wielu
+średniowiecznych wyobrażeń dotyczących natury
+świata i zaczynała opierać wiedzę na obserwacji,
+eksperymencie oraz analizie matematycznej.
 
 </p>
 
-<div class="timeline">
+<p>
 
-<div>
-<h3>1623</h3>
-<p>Birth of Blaise Pascal.</p>
-</div>
+Pascal urodził się 19 czerwca 1623 roku
+w Clermont-Ferrand we Francji.
+Już jako dziecko wykazywał niezwykłe zdolności
+matematyczne. Według przekazów historycznych
+samodzielnie odkrywał zależności geometryczne,
+które normalnie poznawano dopiero na znacznie
+bardziej zaawansowanych etapach edukacji.
 
-<div>
-<h3>1642</h3>
-<p>Invented one of the first mechanical calculators.</p>
-</div>
+</p>
 
-<div>
-<h3>1648</h3>
-<p>Conducted experiments proving atmospheric pressure exists.</p>
-</div>
+<p>
 
-<div>
-<h3>1654</h3>
-<p>Developed foundational ideas in probability theory.</p>
-</div>
+W wieku zaledwie kilkunastu lat stworzył
+prace matematyczne wzbudzające zainteresowanie
+najwybitniejszych uczonych swojej epoki.
+Jego osiągnięcia obejmowały geometrię,
+rachunek prawdopodobieństwa,
+mechanikę płynów oraz badania nad próżnią
+i ciśnieniem atmosferycznym.
 
-<div>
-<h3>1662</h3>
-<p>Death of Blaise Pascal.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-    <section id="pressure">
-
-<h2 class="section-title">
-Understanding Pressure
-</h2>
+</p>
 
 <div class="card">
 
-<p>
-
-Before understanding Pascal's Law,
-we must first understand pressure itself.
-
-Pressure is defined as the amount of force
-distributed over a given area.
-
-The same force can create very different pressures
-depending on how concentrated that force is.
-
-For example,
-a person standing on snow wearing regular shoes
-may sink deeply into the snow because their weight
-is concentrated on a relatively small surface area.
-
-However,
-the same person wearing snowshoes distributes
-their weight across a much larger area,
-creating less pressure and preventing sinking.
-
-</p>
-
-<div class="formula">
-P = F / A
-</div>
+<h3>
+Blaise Pascal – Człowiek Renesansu Epoki Naukowej
+</h3>
 
 <p>
 
-<div class="card">
-
-<h3>Step 4</h3>
-
-<p>
-
-The larger piston experiences
-the same pressure.
+Pascal nie ograniczał się do jednej dziedziny.
+Jego zainteresowania obejmowały matematykę,
+fizykę, filozofię, logikę,
+technikę oraz zagadnienia religijne.
+Tego rodzaju wszechstronność była charakterystyczna
+dla największych uczonych w historii nauki.
 
 </p>
 
 </div>
 
-<div class="card">
-
-<h3>Step 5</h3>
-
 <p>
 
-Because the piston area is larger,
-the resulting force is much greater.
+Jednym z najważniejszych problemów naukowych
+XVII wieku było zrozumienie natury powietrza,
+próżni oraz ciśnienia.
+Wielu uczonych uważało wtedy,
+że próżnia nie może istnieć,
+ponieważ według dominujących poglądów
+„natura nie znosi pustki”.
 
 </p>
 
-</div>
-
-</div>
-
-<img class="image-banner"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Hydraulic_press.svg/1280px-Hydraulic_press.svg.png">
-
-</section><section id="applications">
-
-<h2 class="section-title">
-Real-World Applications of Pascal's Law
-</h2>
-
-<div class="card">
-
 <p>
 
-Pascal's Law is not merely a theoretical idea.
-
-It powers some of the most important technologies
-used throughout the modern world.
-
-From automobiles and airplanes
-to factories and construction sites,
-hydraulic systems allow humans
-to perform tasks that would otherwise
-require enormous amounts of physical force.
-
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Hydraulic Car Lifts</h3>
-
-<p>
-
-Auto repair shops use hydraulic lifts
-to raise vehicles weighing thousands of pounds.
-
-A mechanic can apply a relatively small force,
-and Pascal's Law allows the hydraulic system
-to amplify that force enough
-to lift an entire vehicle.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Hydraulic Brakes</h3>
-
-<p>
-
-Every time a driver presses the brake pedal,
-Pascal's Law is at work.
-
-Pressure applied to the brake fluid
-travels through sealed brake lines
-and activates braking mechanisms
-at all four wheels simultaneously.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Construction Equipment</h3>
-
-<p>
-
-Excavators,
-bulldozers,
-cranes,
-and loaders
-depend on hydraulic cylinders.
-
-These systems generate tremendous forces
-while maintaining precise control.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Aircraft Systems</h3>
-
-<p>
-
-Modern aircraft rely heavily on hydraulics.
-
-Landing gear,
-flight controls,
-and braking systems
-often use hydraulic pressure
-to operate safely and reliably.
-
-</p>
-
-</div>
-
-</div>
-
-<img class="image-banner"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Excavator_hydraulics.jpg/1280px-Excavator_hydraulics.jpg">
-
-</section>
-
-<section id="calculation">
-
-<h2 class="section-title">
-Worked Example
-</h2>
-
-<div class="card">
-
-<h3>Hydraulic Lift Calculation</h3>
-
-<p>
-
-Suppose a mechanic applies
-a force of 100 Newtons
-to a piston with an area of 2 cm².
-
-The output piston
-has an area of 20 cm².
-
-Using Pascal's Law:
-
-</p>
-
-<div class="formula">
-
-100 / 2 = F₂ / 20
-
-</div>
-
-<p>
-
-Multiplying both sides by 20 gives:
-
-</p>
-
-<div class="formula">
-
-F₂ = 1000 N
-
-</div>
-
-<p>
-
-The hydraulic system multiplies
-the original force by a factor of ten.
-
-This is why hydraulic machinery
-can lift heavy objects so efficiently.
+Pascal postanowił zweryfikować te przekonania
+za pomocą doświadczeń.
+Jego eksperymenty wykazały,
+że powietrze posiada masę,
+wywiera ciśnienie oraz że ciśnienie atmosferyczne
+zmienia się wraz z wysokością.
 
 </p>
 
@@ -570,185 +615,67 @@ can lift heavy objects so efficiently.
 
 </section>
 
-<section id="advanced">
+<section id="teoria">
 
-<h2 class="section-title">
-Advanced Engineering Concepts
+<div class="container">
+
+<h2>
+Teoretyczne Podstawy Prawa Pascala
 </h2>
 
-<div class="card">
-
 <p>
 
-Hydraulic systems do not create energy.
-
-This is one of the most misunderstood ideas
-about Pascal's Law.
-
-Although force increases,
-the distance moved by the larger piston decreases.
-
-This relationship follows
-the law of conservation of energy.
-
-Engineers must carefully balance:
+Prawo Pascala opisuje zachowanie płynów
+znajdujących się w stanie równowagi.
+Mówi ono, że zmiana ciśnienia wywierana
+na płyn zamknięty w szczelnym układzie
+jest przekazywana bez osłabienia
+do wszystkich punktów tego płynu
+oraz do ścian naczynia.
 
 </p>
 
-<ul>
-
-<li>Force</li>
-
-<li>Distance</li>
-
-<li>Pressure</li>
-
-<li>Fluid volume</li>
-
-<li>Mechanical efficiency</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h3>Hydraulic Fluid Requirements</h3>
-
 <p>
 
-Hydraulic fluids must possess
-very specific properties.
-
-These include:
+Oznacza to, że ciecz nie przekazuje działania siły
+wyłącznie w jednym kierunku.
+Zamiast tego zmiana ciśnienia rozchodzi się
+jednocześnie we wszystkich kierunkach.
 
 </p>
 
-<ul>
+<div class="card">
 
-<li>Low compressibility</li>
-
-<li>Thermal stability</li>
-
-<li>Lubricating ability</li>
-
-<li>Corrosion resistance</li>
-
-<li>Long service life</li>
-
-</ul>
+<h3>
+Formalne Sformułowanie
+</h3>
 
 <p>
 
-Without these characteristics,
-hydraulic systems would lose efficiency
-and become unreliable.
+Jeżeli do zamkniętego płynu zostanie przyłożona
+dodatkowa siła powodująca wzrost ciśnienia,
+to wzrost ten zostanie przekazany
+jednakowo do każdego punktu płynu.
 
 </p>
 
 </div>
 
-<div class="card">
-
-<h3>Industrial Hydraulic Presses</h3>
-
 <p>
 
-Industrial presses use Pascal's Law
-to generate forces reaching millions of Newtons.
-
-These machines are capable of:
+Z punktu widzenia fizyki jest to konsekwencja
+właściwości cieczy, które bardzo słabo poddają się
+ściskaniu. Dzięki temu energia związana ze zmianą
+ciśnienia może zostać przekazana praktycznie
+bezpośrednio przez cały układ.
 
 </p>
 
-<ul>
-
-<li>Forming metal components</li>
-
-<li>Compressing materials</li>
-
-<li>Manufacturing automobile parts</li>
-
-<li>Producing aerospace structures</li>
-
-<li>Recycling large metal objects</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<section id="videos">
-
-<h2 class="section-title">
-Educational Videos
-</h2>
-
-<div class="card">
-
-<h3>Hydraulic Systems Explained</h3>
-
-<iframe
-src="https://www.youtube.com/embed/7xNnRBksvOU"
-allowfullscreen>
-</iframe>
-
-</div>
-
-<div class="card">
-
-<h3>Pascal's Law Demonstration</h3>
-
-<iframe
-src="https://www.youtube.com/embed/t1xjvK0d6IY"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</section><section id="fluid-mechanics">
-
-<h2 class="section-title">
-The Science of Fluid Mechanics
-</h2>
-
-<div class="card">
-
 <p>
 
-Fluid mechanics is the branch of physics
-that studies the behavior of liquids and gases.
-
-Pascal's Law belongs to this field and helps explain
-how forces move through fluids.
-
-Scientists use fluid mechanics to design:
-
-</p>
-
-<ul>
-
-<li>Aircraft</li>
-
-<li>Ships</li>
-
-<li>Submarines</li>
-
-<li>Hydraulic machinery</li>
-
-<li>Medical equipment</li>
-
-<li>Water systems</li>
-
-<li>Industrial manufacturing systems</li>
-
-</ul>
-
-<p>
-
-Without fluid mechanics,
-many modern technologies would not exist.
+Właśnie dlatego układy hydrauliczne mogą działać
+z niezwykle wysoką skutecznością
+i generować ogromne siły.
 
 </p>
 
@@ -756,184 +683,108 @@ many modern technologies would not exist.
 
 </section>
 
-<section id="atmospheric-pressure">
+<section id="matematyka" class="alt">
 
-<h2 class="section-title">
-Atmospheric Pressure
+<div class="container">
+
+<h2>
+Matematyczny Opis Ciśnienia
 </h2>
 
-<div class="card">
-
 <p>
 
-One of Blaise Pascal's most important discoveries
-involved atmospheric pressure.
-
-For many centuries,
-people believed air had no weight.
-
-Pascal demonstrated that Earth's atmosphere
-actually exerts pressure on everything around us.
-
-At sea level,
-atmospheric pressure is approximately:
+Podstawowym pojęciem niezbędnym
+do zrozumienia Prawa Pascala jest ciśnienie.
 
 </p>
 
-<div class="formula">
+<p>
 
-101,325 Pascals (Pa)
+Ciśnienie definiuje się jako stosunek siły
+działającej prostopadle do powierzchni
+do pola tej powierzchni.
+
+</p>
+
+<div class="card">
+
+<h3>
+Definicja Ciśnienia
+</h3>
+
+<p>
+
+p = F / A
+
+</p>
+
+<p>
+
+gdzie:
+
+</p>
+
+<p>
+
+p – ciśnienie
+
+</p>
+
+<p>
+
+F – siła
+
+</p>
+
+<p>
+
+A – pole powierzchni
+
+</p>
 
 </div>
 
 <p>
 
-This means every square meter of surface area
-experiences over one hundred thousand Newtons
-of force from the atmosphere.
-
-Fortunately,
-our bodies are adapted to balance this pressure.
+Jednostką ciśnienia w układzie SI jest paskal (Pa).
+Jeden paskal odpowiada ciśnieniu wywołanemu
+przez siłę jednego niutona działającą
+na powierzchnię jednego metra kwadratowego.
 
 </p>
 
-</div>
+<p>
 
-<img class="image-banner"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Atmospheric_pressure.svg/1280px-Atmospheric_pressure.svg.png">
+Choć jeden paskal jest jednostką bardzo małą,
+w praktyce często stosuje się kilopaskale,
+megapaskale oraz gigapaskale.
 
-</section>
-
-<section id="experiments">
-
-<h2 class="section-title">
-Historic Experiments
-</h2>
+</p>
 
 <div class="card">
 
-<h3>The Puy de Dôme Experiment</h3>
+<h3>
+Przykładowe Wartości Ciśnienia
+</h3>
 
 <p>
 
-Pascal hypothesized that atmospheric pressure
-would decrease with altitude.
-
-To test this,
-he arranged an experiment
-on the mountain known as Puy de Dôme.
-
-Scientists measured mercury levels
-at different elevations.
-
-The results confirmed his prediction:
-
-the higher the elevation,
-the lower the atmospheric pressure.
-
-This experiment helped establish
-modern atmospheric science.
+Ciśnienie atmosferyczne:
+około 101 325 Pa
 
 </p>
 
-</div>
-
-</section>
-
-<section id="medical">
-
-<h2 class="section-title">
-Medical Applications
-</h2>
-
-<div class="card">
-
 <p>
 
-Pascal's Law is used extensively in medicine.
-
-Hydraulic principles appear in:
+Ciśnienie w oponie samochodowej:
+około 220 000 Pa
 
 </p>
 
-<ul>
-
-<li>Hospital beds</li>
-
-<li>Dental chairs</li>
-
-<li>Medical lifts</li>
-
-<li>Surgical equipment</li>
-
-<li>Hydraulic rehabilitation devices</li>
-
-</ul>
-
 <p>
 
-Doctors and engineers use hydraulic systems
-because they provide smooth,
-controlled movement.
-
-Precision is essential in healthcare,
-and hydraulic systems help achieve that precision.
-
-</p>
-
-</div>
-
-</section>
-
-<section id="comparison">
-
-<h2 class="section-title">
-Pascal Compared to Other Scientists
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Isaac Newton</h3>
-
-<p>
-
-Developed the laws of motion
-and classical mechanics.
-
-Newton explained how forces affect motion.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Archimedes</h3>
-
-<p>
-
-Studied buoyancy and fluid displacement.
-
-His discoveries remain essential
-to fluid mechanics today.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Blaise Pascal</h3>
-
-<p>
-
-Explained how pressure behaves
-inside confined fluids.
-
-His work created the foundation
-for hydraulic engineering.
+Ciśnienie w układach hydraulicznych:
+często przekraczające dziesiątki milionów paskali
 
 </p>
 
@@ -943,205 +794,146 @@ for hydraulic engineering.
 
 </section>
 
-<section id="interesting-facts">
+<section id="hydraulika">
 
-<h2 class="section-title">
-Interesting Facts
+<div class="container">
+
+<h2>
+Hydraulika – Najbardziej Spektakularne Zastosowanie
 </h2>
-
-<div class="card">
-
-<ul>
-
-<li>
-The SI unit of pressure is named the Pascal (Pa)
-in honor of Blaise Pascal.
-</li>
-
-<li>
-Pascal built one of the world's first
-mechanical calculators.
-</li>
-
-<li>
-Modern airplanes use hydraulic systems
-based on Pascal's Law.
-</li>
-
-<li>
-Large hydraulic presses can generate
-millions of Newtons of force.
-</li>
-
-<li>
-Many amusement park rides rely on hydraulic systems.
-</li>
-
-<li>
-Hydraulic technology is used in space-related engineering.
-</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<section id="engineering">
-
-<h2 class="section-title">
-Engineering Impact
-</h2>
-
-<div class="card">
 
 <p>
 
-Pascal's Law transformed engineering.
+Najbardziej znanym zastosowaniem Prawa Pascala
+jest hydraulika.
 
-Today,
-hydraulic systems make it possible
-to lift skyscraper components,
-manufacture automobiles,
-operate aircraft,
-and perform countless industrial tasks.
+</p>
 
-The principle is simple,
-but its impact is enormous.
+<p>
 
-Many experts consider Pascal's Law
-one of the most influential scientific discoveries
-in the history of engineering.
+Układy hydrauliczne wykorzystują zamkniętą ciecz
+do przekazywania energii oraz zwiększania siły.
+
+</p>
+
+<p>
+
+W typowym układzie hydraulicznym występują
+dwa tłoki połączone cieczą.
+
+</p>
+
+<p>
+
+Jeżeli powierzchnia drugiego tłoka jest większa,
+siła uzyskiwana na jego powierzchni
+również staje się większa.
+
+</p>
+
+<div class="card">
+
+<h3>
+Zasada Wzmocnienia Siły
+</h3>
+
+<p>
+
+Jeżeli powierzchnia drugiego tłoka
+jest dziesięciokrotnie większa,
+to siła uzyskana po jego stronie
+również może być dziesięciokrotnie większa.
+
+</p>
+
+<p>
+
+To właśnie ta właściwość umożliwia podnoszenie
+samochodów, ciężarówek, elementów konstrukcyjnych
+oraz ogromnych maszyn przemysłowych.
 
 </p>
 
 </div>
 
-</section><section id="quiz">
-
-<h2 class="section-title">
-Knowledge Check
-</h2>
-
-<div class="card">
-
-<h3>Test Your Understanding</h3>
-
-<p><strong>1.</strong> What does Pascal's Law state?</p>
-
 <p>
-Pressure applied to a confined fluid
-is transmitted equally throughout the fluid.
-</p>
 
-<br>
+Nowoczesne prasy hydrauliczne mogą generować
+siły liczone w tysiącach ton,
+co czyni je jednymi z najpotężniejszych
+urządzeń wykorzystywanych przez człowieka.
 
-<p><strong>2.</strong> What equation is used to calculate pressure?</p>
-
-<div class="formula">
-P = F / A
-</div>
-
-<br>
-
-<p><strong>3.</strong> Name three technologies that use Pascal's Law.</p>
-
-<ul>
-<li>Hydraulic lifts</li>
-<li>Vehicle braking systems</li>
-<li>Construction machinery</li>
-</ul>
-
-<br>
-
-<p><strong>4.</strong> Why are liquids effective in hydraulic systems?</p>
-
-<p>
-Because liquids are nearly incompressible
-and transfer pressure efficiently.
 </p>
 
 </div>
 
-</section>
+</section><section id="hydrostatyka" class="alt">
 
-<section id="glossary">
+<div class="container">
 
-<h2 class="section-title">
-Glossary of Terms
+<h2>
+Hydrostatyka i Ciśnienie w Cieczach
 </h2>
+
+<p>
+
+Jednym z najważniejszych działów mechaniki płynów
+jest hydrostatyka, czyli nauka zajmująca się cieczami
+pozostającymi w stanie spoczynku.
+
+</p>
+
+<p>
+
+Hydrostatyka pozwala wyjaśnić wiele zjawisk
+obserwowanych każdego dnia:
+działanie tam wodnych,
+funkcjonowanie zbiorników ciśnieniowych,
+pracę systemów hydraulicznych,
+a także wpływ głębokości na organizmy żywe
+zamieszkujące oceany.
+
+</p>
+
+<p>
+
+Kluczowym pojęciem hydrostatyki jest
+ciśnienie hydrostatyczne,
+czyli ciśnienie wywierane przez ciecz
+na skutek działania siły grawitacji.
+
+</p>
 
 <div class="card">
 
-<h3>Pressure</h3>
-<p>
-The amount of force applied over a specific area.
-</p>
+<h3>
+Ciśnienie Hydrostatyczne
+</h3>
 
-<h3>Force</h3>
 <p>
-A push or pull acting on an object.
-</p>
 
-<h3>Fluid</h3>
-<p>
-A substance that can flow, including liquids and gases.
-</p>
+Ciśnienie hydrostatyczne rośnie wraz z głębokością.
+Im większa ilość cieczy znajduje się nad danym punktem,
+tym większy jest nacisk wywierany przez słup cieczy.
 
-<h3>Hydraulic System</h3>
-<p>
-A machine that uses fluid pressure
-to transfer energy and multiply force.
-</p>
-
-<h3>Pascal (Pa)</h3>
-<p>
-The SI unit used to measure pressure.
 </p>
 
 </div>
 
-</section>
-
-<section id="future">
-
-<h2 class="section-title">
-Future Applications
-</h2>
-
-<div class="card">
-
 <p>
 
-As technology advances,
-Pascal's Law continues to influence
-new innovations.
-
-Engineers are developing:
+Oznacza to, że nurek znajdujący się
+na głębokości trzydziestu metrów
+doświadcza znacznie większego ciśnienia
+niż osoba znajdująca się przy powierzchni.
 
 </p>
 
-<ul>
-
-<li>Advanced robotic systems</li>
-
-<li>More efficient aircraft hydraulics</li>
-
-<li>Precision manufacturing equipment</li>
-
-<li>Medical robotics</li>
-
-<li>Space exploration technologies</li>
-
-<li>Smart industrial automation systems</li>
-
-</ul>
-
 <p>
 
-Even centuries after Pascal's discovery,
-his work remains deeply connected
-to modern technological progress.
+Zależność ta ma fundamentalne znaczenie
+dla projektowania sprzętu nurkowego,
+łodzi podwodnych oraz konstrukcji oceanicznych.
 
 </p>
 
@@ -1149,88 +941,1020 @@ to modern technological progress.
 
 </section>
 
-<section id="references">
+<section id="oceany">
 
-<h2 class="section-title">
-References & Further Learning
+<div class="container">
+
+<h2>
+Prawo Pascala a Oceany Świata
 </h2>
-
-<div class="card">
 
 <p>
 
-For additional study,
-explore the following resources:
+Oceany pokrywają ponad siedemdziesiąt procent
+powierzchni naszej planety i stanowią jedno
+z najbardziej ekstremalnych środowisk
+występujących na Ziemi.
 
 </p>
 
-<ul>
+<p>
 
-<li>
-Wikipedia – Pascal's Law
-</li>
+Wraz ze wzrostem głębokości rośnie ciśnienie,
+a jego wartości mogą osiągać poziomy,
+które dla większości materiałów
+stanowią ogromne wyzwanie konstrukcyjne.
 
-<li>
-Encyclopaedia Britannica – Fluid Mechanics
-</li>
+</p>
 
-<li>
-NASA Engineering Resources
-</li>
+<p>
 
-<li>
-National Geographic Science Resources
-</li>
+Na głębokości około dziesięciu metrów
+całkowite ciśnienie jest mniej więcej
+dwukrotnie większe od ciśnienia atmosferycznego.
 
-<li>
-Khan Academy Physics
-</li>
+</p>
 
-<li>
-MIT OpenCourseWare
-</li>
+<p>
 
-</ul>
+Na głębokości około stu metrów
+wartość ta wzrasta do około jedenastu atmosfer.
+
+</p>
+
+<p>
+
+W najgłębszych częściach oceanów,
+takich jak Rów Mariański,
+ciśnienie przekracza tysiąc atmosfer.
+
+</p>
+
+<div class="card">
+
+<h3>
+Rów Mariański
+</h3>
+
+<p>
+
+Najgłębsze znane miejsce oceaniczne
+osiąga głębokość przekraczającą dziesięć kilometrów.
+
+</p>
+
+<p>
+
+Ciśnienie panujące na tym poziomie
+jest tak ogromne,
+że większość zwykłych konstrukcji
+uległaby natychmiastowemu zniszczeniu.
+
+</p>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="conclusion">
+<section id="okrety" class="alt">
 
-<h2 class="section-title">
-Conclusion
+<div class="container">
+
+<h2>
+Łodzie Podwodne i Pojazdy Głębinowe
+</h2>
+
+<p>
+
+Projektowanie jednostek zdolnych do pracy
+na dużych głębokościach wymaga niezwykle
+dokładnego zrozumienia działania ciśnienia.
+
+</p>
+
+<p>
+
+Kadłuby łodzi podwodnych projektowane są tak,
+aby równomiernie rozkładać działające siły.
+
+</p>
+
+<p>
+
+Najczęściej stosowane są konstrukcje
+o przekroju cylindrycznym lub kulistym,
+ponieważ takie kształty skutecznie
+minimalizują lokalne koncentracje naprężeń.
+
+</p>
+
+<p>
+
+Inżynierowie wykorzystują zaawansowane modele
+matematyczne, symulacje komputerowe
+oraz testy materiałowe,
+aby zagwarantować bezpieczeństwo załogi.
+
+</p>
+
+<div class="card">
+
+<h3>
+Wyzwania Inżynieryjne
+</h3>
+
+<p>
+
+Na ekstremalnych głębokościach
+nawet niewielki błąd konstrukcyjny
+może prowadzić do katastrofalnej awarii.
+
+</p>
+
+<p>
+
+Dlatego pojazdy głębinowe należą
+do najbardziej zaawansowanych technicznie
+maszyn budowanych przez człowieka.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="eksperyment">
+
+<div class="container">
+
+<h2>
+Eksperyment z Beczką Pascala
+</h2>
+
+<p>
+
+Jednym z najbardziej znanych doświadczeń
+w historii fizyki jest eksperyment
+nazywany beczką Pascala.
+
+</p>
+
+<p>
+
+Do dużej beczki wypełnionej wodą
+przymocowano bardzo długą,
+wąską rurę.
+
+</p>
+
+<p>
+
+Po wlaniu stosunkowo niewielkiej ilości wody
+do wysokiej rury nastąpił znaczny wzrost
+ciśnienia hydrostatycznego.
+
+</p>
+
+<p>
+
+Mimo że masa dodatkowej wody była niewielka,
+wysokość słupa cieczy okazała się wystarczająca,
+aby wywołać ogromne siły działające
+na ściany beczki.
+
+</p>
+
+<div class="card">
+
+<h3>
+Znaczenie Eksperymentu
+</h3>
+
+<p>
+
+Doświadczenie pokazało,
+że o wartości ciśnienia hydrostatycznego
+decyduje przede wszystkim wysokość słupa cieczy,
+a nie całkowita ilość cieczy znajdującej się
+w naczyniu.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="przemysl" class="alt">
+
+<div class="container">
+
+<h2>
+Znaczenie Prawa Pascala we Współczesnym Przemyśle
+</h2>
+
+<p>
+
+Współczesny przemysł wykorzystuje hydraulikę
+niemal na każdym etapie produkcji.
+
+</p>
+
+<p>
+
+Układy hydrauliczne stosowane są
+w hutnictwie, budownictwie,
+górnictwie, energetyce,
+przemyśle stoczniowym
+oraz przemyśle lotniczym.
+
+</p>
+
+<p>
+
+Ich największą zaletą jest możliwość
+przenoszenia bardzo dużych sił
+przy zachowaniu wysokiej dokładności sterowania.
+
+</p>
+
+<p>
+
+W nowoczesnych fabrykach hydraulika
+umożliwia automatyzację procesów,
+które byłyby niemożliwe do wykonania
+wyłącznie przy użyciu siły ludzkich mięśni.
+
+</p>
+
+<div class="card">
+
+<h3>
+Prasy Hydrauliczne
+</h3>
+
+<p>
+
+Prasy hydrauliczne wykorzystywane są
+do kształtowania metali,
+produkcji części samochodowych,
+formowania elementów konstrukcyjnych
+oraz wielu innych procesów technologicznych.
+
+</p>
+
+<p>
+
+Największe z nich mogą generować siły
+liczone w tysiącach ton.
+
+</p>
+
+</div>
+
+</div>
+
+</section><section id="lotnictwo">
+
+<div class="container">
+
+<h2>
+Prawo Pascala w Lotnictwie i Technice Kosmicznej
+</h2>
+
+<p>
+
+Współczesne lotnictwo należy do najbardziej
+zaawansowanych technologicznie dziedzin działalności człowieka.
+Każdy nowoczesny samolot składa się z tysięcy elementów,
+które muszą działać niezawodnie w bardzo wymagających warunkach.
+
+</p>
+
+<p>
+
+W wielu konstrukcjach lotniczych wykorzystuje się
+układy hydrauliczne oparte bezpośrednio na Prawie Pascala.
+Pozwalają one na przekazywanie ogromnych sił
+przy zachowaniu wysokiej precyzji sterowania.
+
+</p>
+
+<p>
+
+Klapy, lotki, ster wysokości,
+ster kierunku oraz podwozie
+są często kontrolowane przez systemy hydrauliczne,
+które umożliwiają pilotowi wykonywanie manewrów
+niemożliwych do zrealizowania wyłącznie przy użyciu siły mięśni.
+
+</p>
+
+<div class="card">
+
+<h3>
+Hydraulika w Samolotach Pasażerskich
+</h3>
+
+<p>
+
+Duże samoloty pasażerskie wykorzystują
+rozbudowane systemy hydrauliczne pracujące
+pod bardzo wysokim ciśnieniem.
+
+</p>
+
+<p>
+
+Zapewniają one niezawodną pracę powierzchni sterowych,
+układów hamulcowych oraz mechanizmów podwozia.
+
+</p>
+
+</div>
+
+<p>
+
+Podobne rozwiązania wykorzystywane są również
+w wielu pojazdach kosmicznych,
+gdzie niezawodność stanowi absolutny priorytet.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="medycyna" class="alt">
+
+<div class="container">
+
+<h2>
+Zastosowania w Medycynie
+</h2>
+
+<p>
+
+Choć medycyna kojarzona jest przede wszystkim
+z naukami biologicznymi,
+w rzeczywistości wykorzystuje ogromną liczbę
+rozwiązań opartych na fizyce i inżynierii.
+
+</p>
+
+<p>
+
+Prawo Pascala znajduje zastosowanie
+w urządzeniach rehabilitacyjnych,
+stołach operacyjnych,
+fotelach zabiegowych,
+podnośnikach medycznych
+oraz wielu specjalistycznych systemach diagnostycznych.
+
+</p>
+
+<p>
+
+Układy hydrauliczne pozwalają na płynne,
+stabilne i bezpieczne przemieszczanie ciężkich elementów,
+co ma ogromne znaczenie dla bezpieczeństwa pacjentów
+oraz personelu medycznego.
+
+</p>
+
+<div class="card">
+
+<h3>
+Znaczenie dla Współczesnej Opieki Zdrowotnej
+</h3>
+
+<p>
+
+Bez wykorzystania technologii hydraulicznych
+wiele nowoczesnych procedur medycznych
+byłoby znacznie trudniejszych do przeprowadzenia.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="robotyka">
+
+<div class="container">
+
+<h2>
+Robotyka i Automatyzacja
+</h2>
+
+<p>
+
+Współczesne roboty przemysłowe
+łączą w sobie elementy mechaniki,
+elektroniki, informatyki oraz hydrauliki.
+
+</p>
+
+<p>
+
+W wielu zastosowaniach przemysłowych
+hydraulika pozostaje niezastąpiona,
+szczególnie tam,
+gdzie wymagane jest generowanie bardzo dużych sił.
+
+</p>
+
+<p>
+
+Ramiona robotyczne wykorzystywane
+w hutach, stoczniach oraz zakładach produkcyjnych
+często korzystają z siłowników hydraulicznych,
+które umożliwiają wykonywanie niezwykle wymagających zadań.
+
+</p>
+
+<div class="card">
+
+<h3>
+Hydraulika a Roboty Przemysłowe
+</h3>
+
+<p>
+
+Połączenie komputerowego sterowania
+z układami hydraulicznymi pozwala osiągać
+wysoką precyzję oraz ogromną siłę działania.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="analiza" class="alt">
+
+<div class="container">
+
+<h2>
+Głębsza Analiza Fizyczna
+</h2>
+
+<p>
+
+Prawo Pascala można analizować
+nie tylko z punktu widzenia praktycznego,
+ale również matematycznego i teoretycznego.
+
+</p>
+
+<p>
+
+Jednym z kluczowych aspektów jest zrozumienie,
+że wzrost siły w układzie hydraulicznym
+nie oznacza tworzenia energii.
+
+</p>
+
+<p>
+
+Choć siła może zostać zwielokrotniona,
+odbywa się to kosztem przemieszczenia.
+
+</p>
+
+<p>
+
+Mniejszy tłok musi pokonać większą drogę,
+aby większy tłok mógł wygenerować większą siłę.
+
+</p>
+
+<div class="card">
+
+<h3>
+Zasada Zachowania Energii
+</h3>
+
+<p>
+
+Układy hydrauliczne nie tworzą energii.
+Zmieniają jedynie sposób jej przekazywania,
+umożliwiając zamianę niewielkiej siły działającej
+na dużej drodze w dużą siłę działającą
+na krótszej drodze.
+
+</p>
+
+</div>
+
+<p>
+
+To właśnie zgodność z zasadą zachowania energii
+sprawia, że Prawo Pascala pozostaje
+w pełni zgodne z innymi fundamentalnymi prawami fizyki.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="bezpieczenstwo">
+
+<div class="container">
+
+<h2>
+Znaczenie dla Bezpieczeństwa Konstrukcji
+</h2>
+
+<p>
+
+Współczesna inżynieria wymaga niezwykle dokładnego
+przewidywania działania sił i ciśnień.
+
+</p>
+
+<p>
+
+Projektanci mostów,
+zapór wodnych,
+platform wiertniczych,
+okrętów,
+samolotów oraz urządzeń przemysłowych
+muszą uwzględniać wpływ ciśnienia
+na wszystkie elementy konstrukcji.
+
+</p>
+
+<p>
+
+Nawet niewielkie błędy projektowe
+mogą prowadzić do bardzo poważnych konsekwencji.
+
+</p>
+
+<div class="card">
+
+<h3>
+Znaczenie Analizy Ciśnienia
+</h3>
+
+<p>
+
+Badanie rozkładu ciśnień stanowi jeden
+z najważniejszych etapów projektowania
+nowoczesnych konstrukcji technicznych.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="ciekawostki" class="alt">
+
+<div class="container">
+
+<h2>
+Ciekawostki Naukowe
 </h2>
 
 <div class="card">
 
+<h3>
+Czy Wiesz, że...?
+</h3>
+
 <p>
 
-Pascal's Law is one of the most influential
-principles in the history of science
-and engineering.
+Jednostka ciśnienia „paskal”
+została oficjalnie wprowadzona
+do Międzynarodowego Układu Jednostek SI
+na cześć Blaise'a Pascala.
 
-What began as an investigation into pressure
-became the foundation for hydraulic technology
-used throughout the world.
+</p>
 
-Today,
-hydraulic systems help humans
-build cities,
-operate aircraft,
-manufacture products,
-perform medical procedures,
-and accomplish tasks that would otherwise
-require extraordinary amounts of force.
+<p>
 
-The genius of Pascal's discovery lies
-in its simplicity:
+Ciśnienie atmosferyczne przy poziomie morza
+wynosi około 101 325 paskali.
 
-a change in pressure applied to a confined fluid
-is transmitted equally throughout the fluid.
+</p>
 
-This elegant principle continues
-to power modern civilization.
+<p>
+
+Najgłębsze miejsca oceaniczne
+charakteryzują się ciśnieniem
+przekraczającym tysiąc razy wartość
+ciśnienia atmosferycznego.
+
+</p>
+
+<p>
+
+Największe układy hydrauliczne świata
+potrafią generować siły liczone
+w dziesiątkach tysięcy ton.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="znaczenie">
+
+<div class="container">
+
+<h2>
+Dlaczego Prawo Pascala Jest Tak Ważne?
+</h2>
+
+<p>
+
+Niektóre prawa fizyki opisują zjawiska,
+które można zaobserwować jedynie
+w wyspecjalizowanych laboratoriach.
+
+</p>
+
+<p>
+
+Prawo Pascala należy do wyjątkowej grupy praw,
+które wpływają na codzienne życie miliardów ludzi.
+
+</p>
+
+<p>
+
+Każde użycie hamulców samochodowych,
+każde działanie podnośnika hydraulicznego,
+każda praca koparki,
+każdy lot nowoczesnego samolotu
+oraz wiele procedur medycznych
+w pewnym stopniu opiera się
+na zasadach opisanych przez Pascala.
+
+</p>
+
+<div class="card">
+
+<h3>
+Dziedzictwo Blaise'a Pascala
+</h3>
+
+<p>
+
+Ponad trzy i pół wieku po swoich odkryciach
+Blaise Pascal pozostaje jednym
+z najważniejszych naukowców w historii.
+
+</p>
+
+<p>
+
+Jego badania nad ciśnieniem,
+próżnią i mechaniką płynów
+stały się fundamentem niezliczonych technologii,
+które kształtują współczesny świat.
+
+</p>
+
+</div>
+
+</div>
+
+</section><section id="porownania">
+
+<div class="container">
+
+<h2>
+Porównanie Wybranych Wartości Ciśnienia
+</h2>
+
+<p>
+
+Aby lepiej zrozumieć skalę zjawisk związanych z ciśnieniem,
+warto porównać wartości występujące w różnych sytuacjach
+spotykanych zarówno w życiu codziennym,
+jak i w zaawansowanych zastosowaniach technicznych.
+
+</p>
+
+<div class="card">
+
+<table>
+
+<tr>
+
+<th>Sytuacja</th>
+<th>Przybliżone Ciśnienie</th>
+
+</tr>
+
+<tr>
+
+<td>Atmosfera na poziomie morza</td>
+<td>101 325 Pa</td>
+
+</tr>
+
+<tr>
+
+<td>Opona samochodowa</td>
+<td>200 000–300 000 Pa</td>
+
+</tr>
+
+<tr>
+
+<td>Nurek na głębokości 10 m</td>
+<td>około 200 000 Pa</td>
+
+</tr>
+
+<tr>
+
+<td>Nurek na głębokości 100 m</td>
+<td>ponad 1 000 000 Pa</td>
+
+</tr>
+
+<tr>
+
+<td>Zaawansowany układ hydrauliczny</td>
+<td>dziesiątki MPa</td>
+
+</tr>
+
+<tr>
+
+<td>Najgłębsze obszary oceanów</td>
+<td>ponad 100 MPa</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="wnioski" class="alt">
+
+<div class="container">
+
+<h2>
+Wnioski Naukowe
+</h2>
+
+<p>
+
+Prawo Pascala stanowi jeden z fundamentów współczesnej fizyki
+i inżynierii. Jego znaczenie wykracza daleko poza
+teoretyczne rozważania dotyczące mechaniki płynów.
+
+</p>
+
+<p>
+
+Dzięki zrozumieniu sposobu rozchodzenia się ciśnienia
+w płynach możliwe było stworzenie ogromnej liczby technologii,
+które obecnie uznawane są za niezbędne dla funkcjonowania
+nowoczesnego społeczeństwa.
+
+</p>
+
+<p>
+
+Prawo to pozostaje doskonałym przykładem,
+jak pozornie prosta obserwacja przyrodnicza
+może doprowadzić do powstania przełomowych rozwiązań
+technicznych wykorzystywanych przez kolejne pokolenia.
+
+</p>
+
+<div class="card">
+
+<h3>
+Najważniejsze Wnioski
+</h3>
+
+<p>
+
+• Ciśnienie przyłożone do zamkniętego płynu
+rozchodzi się jednakowo we wszystkich kierunkach.
+
+</p>
+
+<p>
+
+• Wzrost siły w układach hydraulicznych
+wynika ze zmiany powierzchni tłoków.
+
+</p>
+
+<p>
+
+• Prawo Pascala pozostaje zgodne
+z zasadą zachowania energii.
+
+</p>
+
+<p>
+
+• Hydraulika należy do najważniejszych zastosowań
+mechaniki płynów.
+
+</p>
+
+<p>
+
+• Odkrycie Pascala wpłynęło na rozwój przemysłu,
+transportu, medycyny oraz badań naukowych.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="quiz">
+
+<div class="container">
+
+<h2>
+Quiz Wiedzy
+</h2>
+
+<p>
+
+Sprawdź swoją wiedzę dotyczącą Prawa Pascala.
+
+</p>
+
+<div class="card">
+
+<h3>
+Pytanie 1</h3>
+
+<p>
+
+Co mówi Prawo Pascala?
+
+</p>
+
+<button class="quiz-button" data-correct="true">
+
+Zmiana ciśnienia w zamkniętym płynie
+jest przekazywana jednakowo do wszystkich punktów.
+
+</button>
+
+<button class="quiz-button">
+
+Temperatura płynu zawsze rośnie wraz z ciśnieniem.
+
+</button>
+
+<button class="quiz-button">
+
+Ciecze nie mogą wywierać nacisku na ściany naczynia.
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+Pytanie 2</h3>
+
+<p>
+
+Jak nazywa się jednostka ciśnienia w układzie SI?
+
+</p>
+
+<button class="quiz-button">
+
+Niuton
+
+</button>
+
+<button class="quiz-button" data-correct="true">
+
+Paskal
+
+</button>
+
+<button class="quiz-button">
+
+Dżul
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+Pytanie 3</h3>
+
+<p>
+
+Dlaczego układy hydrauliczne mogą zwiększać siłę?
+
+</p>
+
+<button class="quiz-button">
+
+Ponieważ tworzą energię.
+
+</button>
+
+<button class="quiz-button" data-correct="true">
+
+Ponieważ wykorzystują różnicę powierzchni tłoków.
+
+</button>
+
+<button class="quiz-button">
+
+Ponieważ eliminują działanie grawitacji.
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+Wynik</h3>
+
+<p id="quiz-score">
+
+0 / 3
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="podsumowanie" class="alt">
+
+<div class="container">
+
+<h2>
+Podsumowanie Końcowe
+</h2>
+
+<p>
+
+Prawo Pascala jest jednym z najbardziej wpływowych
+odkryć w historii fizyki.
+
+</p>
+
+<p>
+
+Od układów hydraulicznych,
+przez lotnictwo,
+medycynę,
+robotykę,
+aż po eksplorację najgłębszych obszarów oceanów,
+zasada ta pozostaje niezwykle istotna
+dla rozwoju współczesnej technologii.
+
+</p>
+
+<p>
+
+Dziedzictwo Blaise'a Pascala pokazuje,
+że głębokie zrozumienie podstawowych praw natury
+może prowadzić do powstania rozwiązań,
+które zmieniają świat na setki lat.
 
 </p>
 
@@ -1240,70 +1964,447 @@ to power modern civilization.
 
 <footer>
 
+<div class="container">
+
 <h2>
-Pascal's Law
+Prawo Pascala
 </h2>
 
 <p>
 
-A Complete Scientific Exploration
+Kompleksowe opracowanie naukowe
+dotyczące mechaniki płynów,
+hydrostatyki i hydrauliki.
 
 </p>
 
-<br>
+<p id="year"></p>
 
-<p>
-
-Created By: Natan i Kuba
-
-</p>
-
-<br>
-
-<p>
-
-Built with HTML & CSS for GitHub Pages
-
-</p>
+</div>
 
 </footer>
 
 <script>
 
-const cards = document.querySelectorAll('.card');
+/* ==========================================
+   ROK W STOPCE
+========================================== */
 
-const observer = new IntersectionObserver(entries => {
+document.getElementById("year").textContent =
+"© " +
+new Date().getFullYear() +
+" | Opracowanie: Prawo Pascala";
+
+/* ==========================================
+   QUIZ
+========================================== */
+
+const buttons =
+document.querySelectorAll(
+".quiz-button"
+);
+
+let score = 0;
+
+let answered =
+new Set();
+
+buttons.forEach(button => {
+
+button.addEventListener(
+"click",
+() => {
+
+const card =
+button.closest(".card");
+
+if(answered.has(card))
+return;
+
+answered.add(card);
+
+if(
+button.dataset.correct === "true"
+){
+
+score++;
+
+button.style.border =
+"2px solid #38d26e";
+
+button.style.background =
+"rgba(56,210,110,0.15)";
+
+}else{
+
+button.style.border =
+"2px solid #ff6666";
+
+button.style.background =
+"rgba(255,102,102,0.15)";
+}
+
+document.getElementById(
+"quiz-score"
+).textContent =
+score + " / 3";
+
+}
+);
+
+});
+/* ==========================================
+   SMOOTH SCROLL NAVIGATION
+========================================== */
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(link => {
+
+link.addEventListener(
+"click",
+event => {
+
+event.preventDefault();
+
+const target =
+document.querySelector(
+link.getAttribute("href")
+);
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth",
+block:"start"
+
+});
+
+}
+
+});
+
+});
+
+/* ==========================================
+   REVEAL ON SCROLL
+========================================== */
+
+const revealElements =
+document.querySelectorAll(
+"section, .card"
+);
+
+const revealObserver =
+new IntersectionObserver(
+
+entries => {
 
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
 
-entry.target.animate([
+entry.target.style.opacity = "1";
 
-{
-opacity:0,
-transform:'translateY(40px)'
+entry.target.style.transform =
+"translateY(0px)";
+
+}
+
+});
+
 },
 
 {
-opacity:1,
-transform:'translateY(0px)'
+threshold:0.12
 }
 
-],{
+);
 
-duration:800,
-fill:'forwards'
+revealElements.forEach(element => {
+
+element.style.opacity = "0";
+
+element.style.transform =
+"translateY(40px)";
+
+element.style.transition =
+"all 0.9s ease";
+
+revealObserver.observe(element);
 
 });
+
+/* ==========================================
+   NAVBAR EFFECT
+========================================== */
+
+const navbar =
+document.querySelector("nav");
+
+window.addEventListener(
+"scroll",
+() => {
+
+if(window.scrollY > 40){
+
+navbar.style.background =
+"rgba(5,13,24,0.95)";
+
+navbar.style.boxShadow =
+"0 10px 40px rgba(0,0,0,0.4)";
+
+}else{
+
+navbar.style.background =
+"rgba(5,13,24,0.78)";
+
+navbar.style.boxShadow =
+"none";
+
+}
+
+}
+);
+
+/* ==========================================
+   READING PROGRESS BAR
+========================================== */
+
+const progress =
+document.createElement("div");
+
+progress.style.position = "fixed";
+progress.style.top = "0";
+progress.style.left = "0";
+progress.style.height = "4px";
+progress.style.width = "0%";
+progress.style.zIndex = "999999";
+progress.style.background =
+"linear-gradient(90deg,#4fb6ff,#7ad0ff)";
+
+document.body.appendChild(
+progress
+);
+
+window.addEventListener(
+"scroll",
+() => {
+
+const height =
+
+document.documentElement.scrollHeight
+-
+document.documentElement.clientHeight;
+
+const progressValue =
+
+(window.scrollY / height) * 100;
+
+progress.style.width =
+progressValue + "%";
+
+}
+);
+
+/* ==========================================
+   ACTIVE NAVIGATION
+========================================== */
+
+const sections =
+document.querySelectorAll(
+"section"
+);
+
+const navLinks =
+document.querySelectorAll(
+"nav a"
+);
+
+window.addEventListener(
+"scroll",
+() => {
+
+let current = "";
+
+sections.forEach(section => {
+
+const top =
+section.offsetTop - 200;
+
+if(window.scrollY >= top){
+
+current = section.id;
 
 }
 
 });
 
+navLinks.forEach(link => {
+
+link.style.color =
+"var(--text2)";
+
+if(
+
+link.getAttribute("href")
+===
+"#" + current
+
+){
+
+link.style.color =
+"#7ad0ff";
+
+}
+
 });
 
-cards.forEach(card => observer.observe(card));
+}
+);
+
+/* ==========================================
+   HERO PARALLAX
+========================================== */
+
+const hero =
+document.querySelector(
+".hero"
+);
+
+window.addEventListener(
+"scroll",
+() => {
+
+if(!hero) return;
+
+const offset =
+window.scrollY * 0.3;
+
+hero.style.transform =
+`translateY(${offset * 0.08}px)`;
+
+}
+);
+
+/* ==========================================
+   CARD HOVER DEPTH
+========================================== */
+
+const cards =
+document.querySelectorAll(
+".card"
+);
+
+cards.forEach(card => {
+
+card.addEventListener(
+"mousemove",
+event => {
+
+const rect =
+card.getBoundingClientRect();
+
+const x =
+event.clientX - rect.left;
+
+const y =
+event.clientY - rect.top;
+
+const rotateX =
+((y / rect.height) - 0.5)
+* -8;
+
+const rotateY =
+((x / rect.width) - 0.5)
+* 8;
+
+card.style.transform =
+
+`
+perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-6px)
+`;
+
+}
+);
+
+card.addEventListener(
+"mouseleave",
+() => {
+
+card.style.transform =
+"translateY(0px)";
+
+}
+);
+
+});
+
+/* ==========================================
+   SCIENTIFIC COUNTER EFFECT
+========================================== */
+
+function animateNumber(
+element,
+start,
+end,
+duration
+){
+
+let startTime = null;
+
+function animation(time){
+
+if(!startTime)
+startTime = time;
+
+const progress =
+
+Math.min(
+(time - startTime)
+/
+duration,
+1
+);
+
+const value =
+
+Math.floor(
+progress *
+(end - start)
++
+start
+);
+
+element.textContent =
+
+value.toLocaleString(
+"pl-PL"
+);
+
+if(progress < 1){
+
+requestAnimationFrame(
+animation
+);
+
+}
+
+}
+
+requestAnimationFrame(
+animation
+);
+
+}
+
+/* ==========================================
+   END OF JAVASCRIPT
+========================================== */
 
 </script>
 
